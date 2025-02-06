@@ -12,19 +12,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     button.addEventListener("click", function () {
-        // Change image to happy expression
-        expressionImg.src = "happy.png"; // Ensure you have happy.png in the same folder
-
-        // Bounce effect when image changes
-        gsap.fromTo(expressionImg, 
-            { scale: 1, rotate: 0 }, 
-            { scale: 1.2, rotate: 5, duration: 0.3, yoyo: true, repeat: 1 }
-        );
+        // Fade out sad expression, then switch to happy and fade in
+        gsap.to(expressionImg, {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.5,
+            onComplete: function () {
+                expressionImg.src = "happy.png"; // Ensure you have happy.png in the same folder
+                gsap.to(expressionImg, { opacity: 1, scale: 1.2, duration: 0.5 });
+            }
+        });
 
         // Change button text and disable it
         button.textContent = "Yay! You Forgave Me! 💖";
         button.disabled = true;
-        button.style.backgroundColor = "#999"; // Disable button effect
 
         // Generate floating hearts
         for (let i = 0; i < 15; i++) {
