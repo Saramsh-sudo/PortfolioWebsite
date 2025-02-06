@@ -39,6 +39,11 @@ button:hover {
     background-color: #cc0052;
 }
 
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
 #heartContainer {
     position: absolute;
     width: 100%;
@@ -52,7 +57,7 @@ button:hover {
     width: 200px;
     height: 200px;
     margin-top: 20px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .heart {
