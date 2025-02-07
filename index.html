@@ -6,12 +6,75 @@
   <title>I love you Reena, Speak to me 💖</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+    /* Basic styling (can be moved to your style.css file) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    #slideshow {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 20px auto;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      display: none;
+    }
+
+    .slide:first-child {
+      display: block;
+      opacity: 1;
+    }
+
+    #forgiveBtn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #heartContainer {
+      position: relative;
+      height: 100px; /* Adjust as needed */
+    }
+
+    .heart {
+      font-size: 24px;
+      position: absolute;
+    }
+
+    #imageChange {
+      margin-top: 20px;
+    }
+
+    #imageChange img {
+      width: 200px;
+      margin: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>I love you Reena 💕your best friend to teacher for eternity</h1>
     <p>Speak to me?1000 mistakes ta krishna bhagwan le ni maaf garnu huntheeyo ma bata bhako bhaye ni speak  🥺</p>
-    
 
     <div id="slideshow">
       <img src="young.png" alt="Photo 1" class="slide">
@@ -19,7 +82,7 @@
       <img src="Reena.jpg" alt="Photo 3" class="slide">
     </div>
     <br>
-    
+   
     <button id="forgiveBtn">Forgive Me? 😢</button>
     <div id="heartContainer"></div>
     <p id="forgivenText" style="display:none;">If you have forgiven, what are you waiting for? <a href="https://www.facebook.com/profile.php?id=100020285261174">Visit Facebook</a></p>
@@ -32,7 +95,7 @@
   </div>
 
   <script>
-     document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
       let button = document.getElementById("forgiveBtn");
       let heartContainer = document.getElementById("heartContainer");
       let slideshow = document.getElementById("slideshow");
@@ -68,6 +131,8 @@
         
         // Show the images
         imageChange.style.display = 'block';
+                // Show the forgiven text
+        forgivenText.style.display = 'block';
 
         // Generate floating hearts
         for (let i = 0; i < 15; i++) {
@@ -89,41 +154,6 @@
         }
       });
     });
-
   </script>
-
-  <style>
-    #videoContainer {
-      text-align: center;
-      margin: 20px auto;
-    }
-
-    #slideshow {
-      position: relative;
-      width: 300px;
-      height: 200px;
-      margin: 0 auto;
-    }
-
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      display: none;
-    }
-
-    .slide:first-child {
-      display: block;
-      opacity: 1;
-    }
-
-    .heart {
-      font-size: 24px;
-      position: absolute;
-    }
-  </style>
 </body>
 </html>
