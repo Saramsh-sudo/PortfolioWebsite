@@ -32,7 +32,7 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+     document.addEventListener("DOMContentLoaded", function () {
       let button = document.getElementById("forgiveBtn");
       let heartContainer = document.getElementById("heartContainer");
       let slideshow = document.getElementById("slideshow");
@@ -63,10 +63,9 @@
       setInterval(showNextSlide, 3000); // Change slide every 3 seconds
 
       button.addEventListener("click", function () {
-        // Hide the button and forgiven text
+        // Hide the button
         button.style.display = 'none';
-        forgivenText.style.display = 'none';
-
+        
         // Show the images
         imageChange.style.display = 'block';
 
@@ -90,6 +89,7 @@
         }
       });
     });
+
   </script>
 
   <style>
