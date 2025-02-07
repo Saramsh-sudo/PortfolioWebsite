@@ -74,8 +74,9 @@
         }
 
         #imageChange img {
-            width: 80%; /* Make responsive */
+            max-width: 80%; /* Make responsive */
             max-width: 200px; /* Set a maximum width */
+            height: auto;
             margin: 10px;
         }
 
@@ -101,9 +102,9 @@
         <p id="forgivenText" style="display:none;">If you have forgiven, what are you waiting for? <a href="https://www.facebook.com/profile.php?id=100020285261174">Visit Facebook</a></p>
 
         <div id="imageChange" style="display: none; text-align: center;">
-            <img id="sadImage" src="Sad.png" alt="Sad" style="width: 80%; max-width: 200px;">
+            <img id="sadImage" src="Sad.png" alt="Sad" style="max-width: 80%; max-width: 200px; height: auto;" onerror="this.onerror=null; this.src='default.png'">
             <p>Thank you for making me from</p>
-            <img id="happyImage" src="happy.png" alt="Happy" style="width: 80%; max-width: 200px;">
+            <img id="happyImage" src="happy.png" alt="Happy" style="max-width: 80%; max-width: 200px; height: auto;" onerror="this.onerror=null; this.src='default.png'">
         </div>
     </div>
 
