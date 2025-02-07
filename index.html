@@ -11,8 +11,8 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%; /* Ensure full height */
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            height: 100%;
+            overflow-x: hidden;
         }
 
         body {
@@ -23,13 +23,13 @@
 
         .container {
             padding: 20px;
-            min-height: 100vh; /* Ensure container takes full screen */
+            min-height: 100vh;
         }
 
         #slideshow {
             position: relative;
-            width: 80%; /* Make responsive */
-            max-width: 500px; /* Set a maximum width */
+            width: 80%;
+            max-width: 500px;
             height: auto;
             margin: 20px auto;
         }
@@ -61,7 +61,7 @@
 
         #heartContainer {
             position: relative;
-            height: 100px; /* Adjust as needed */
+            height: 100px;
         }
 
         .heart {
@@ -74,8 +74,8 @@
         }
 
         #imageChange img {
-            max-width: 80%; /* Make responsive */
-            max-width: 200px; /* Set a maximum width */
+            max-width: 80%;
+            max-width: 200px;
             height: auto;
             margin: 10px;
         }
@@ -91,9 +91,9 @@
         <p>Speak to me?1000 mistakes ta krishna bhagwan le ni maaf garnu huntheeyo ma bata bhako bhaye ni speak  🥺</p>
 
         <div id="slideshow">
-            <img src="young.png" alt="Photo 1" class="slide">
-            <img src="middle.png" alt="Photo 2" class="slide">
-            <img src="Reena.jpg" alt="Photo 3" class="slide">
+            <img src="young.png" alt="Photo 1" class="slide" onerror="this.onerror=null;this.src='default.png'">
+            <img src="middle.png" alt="Photo 2" class="slide" onerror="this.onerror=null;this.src='default.png'">
+            <img src="Reena.jpg" alt="Photo 3" class="slide" onerror="this.onerror=null;this.src='default.png'">
         </div>
         <br>
        
