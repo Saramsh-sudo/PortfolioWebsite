@@ -11,13 +11,23 @@
   <div class="container">
     <h1>I love you Reena 💕</h1>
     <p>Speak to me? 🥺</p>
+    
+    <!-- Video Section -->
+    <div id="videoContainer">
+      <video id="loveVideo" width="300" controls autoplay loop muted>
+        <source src="02\ Noor\ E\ Khuda.m4p" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
     <div id="slideshow">
       <img src="young.png" alt="Photo 1" class="slide">
       <img src="middle.png" alt="Photo 2" class="slide">
       <img src="old.png" alt="Photo 3" class="slide">
-      <img src="Reena.jpg" alt="Photo 3" class="slide">
+      <img src="Reena.jpg" alt="Photo 4" class="slide">
     </div>
     <br>
+    
     <button id="forgiveBtn">Forgive Me? 😢</button>
     <div id="heartContainer"></div>
   </div>
@@ -79,10 +89,15 @@
   </script>
 
   <style>
+    #videoContainer {
+      text-align: center;
+      margin: 20px auto;
+    }
+
     #slideshow {
       position: relative;
-      width: 300px; /* Adjust as needed */
-      height: 200px; /* Adjust as needed */
+      width: 300px;
+      height: 200px;
       margin: 0 auto;
     }
 
