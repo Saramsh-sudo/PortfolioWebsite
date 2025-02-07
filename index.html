@@ -1,174 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I love you Reena, Speak to me 💖</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <style>
-        /* Resetting default styles */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        .container {
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        #slideshow {
-            position: relative;
-            width: 80%;
-            max-width: 500px;
-            height: auto;
-            margin: 20px auto;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            display: none;
-        }
-
-        .slide:first-child {
-            display: block;
-            opacity: 1;
-        }
-
-        #forgiveBtn {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        #heartContainer {
-            position: relative;
-            height: 100px;
-        }
-
-        .heart {
-            font-size: 24px;
-            position: absolute;
-        }
-
-        #imageChange {
-            margin-top: 20px;
-        }
-
-        #imageChange img {
-            max-width: 80%;
-            max-width: 200px;
-            height: auto;
-            margin: 10px;
-        }
-
-        #forgivenText {
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I love you Reena, Speak to me 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>I love you Reena 💕your best friend to teacher for eternity</h1>
-        <p>Speak to me?1000 mistakes ta krishna bhagwan le ni maaf garnu huntheeyo ma bata bhako bhaye ni speak  🥺</p>
+  <div class="container">
+    <h1>I love you Reena 💕your best friend to teacher for eternity</h1>
+    <p>Speak to me?1000 mistakes ta krishna bhagwan le ni maaf garnu huntheeyo ma bata bhako bhaye ni speak  🥺</p>
+    
 
-        <div id="slideshow">
-            <img src="young.png" alt="Photo 1" class="slide" onerror="this.onerror=null;this.src='default.png'">
-            <img src="middle.png" alt="Photo 2" class="slide" onerror="this.onerror=null;this.src='default.png'">
-            <img src="Reena.jpg" alt="Photo 3" class="slide" onerror="this.onerror=null;this.src='default.png'">
-        </div>
-        <br>
-       
-        <button id="forgiveBtn">Forgive Me? 😢</button>
-        <div id="heartContainer"></div>
-        <p id="forgivenText" style="display:none;">If you have forgiven, what are you waiting for? <a href="https://www.facebook.com/profile.php?id=100020285261174">Visit Facebook</a></p>
-
-        <div id="imageChange" style="display: none; text-align: center;">
-            <img id="sadImage" src="Sad.png" alt="Sad" style="max-width: 80%; max-width: 200px; height: auto;" onerror="this.onerror=null; this.src='default.png'">
-            <p>Thank you for making me from</p>
-            <img id="happyImage" src="happy.png" alt="Happy" style="max-width: 80%; max-width: 200px; height: auto;" onerror="this.onerror=null; this.src='default.png'">
-        </div>
+    <div id="slideshow">
+      <img src="young.png" alt="Photo 1" class="slide">
+      <img src="middle.png" alt="Photo 2" class="slide">
+      <img src="Reena.jpg" alt="Photo 3" class="slide">
     </div>
+    <br>
+    
+    <button id="forgiveBtn">Forgive Me? 😢</button>
+    <div id="heartContainer"></div>
+  </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let button = document.getElementById("forgiveBtn");
-            let heartContainer = document.getElementById("heartContainer");
-            let slideshow = document.getElementById("slideshow");
-            let slides = document.querySelectorAll(".slide");
-            let currentSlide = 0;
-            let forgivenText = document.getElementById("forgivenText");
-            let imageChange = document.getElementById("imageChange");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let button = document.getElementById("forgiveBtn");
+      let heartContainer = document.getElementById("heartContainer");
+      let slideshow = document.getElementById("slideshow");
+      let slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
 
-            // Shake animation for the button
-            gsap.to(button, {
-                x: -5,
-                repeat: -1,
-                yoyo: true,
-                duration: 0.1
-            });
+      // Shake animation for the button
+      gsap.to(button, {
+        x: -5,
+        repeat: -1,
+        yoyo: true,
+        duration: 0.1
+      });
 
-            // Slideshow animation
-            function showNextSlide() {
-                gsap.to(slides[currentSlide], { opacity: 0, duration: 1, onComplete: () => {
-                    slides[currentSlide].style.display = "none";
-                    currentSlide = (currentSlide + 1) % slides.length;
-                    slides[currentSlide].style.display = "block";
-                    gsap.fromTo(slides[currentSlide], { opacity: 0 }, { opacity: 1, duration: 1 });
-                }});
-            }
+      // Slideshow animation
+      function showNextSlide() {
+        gsap.to(slides[currentSlide], { opacity: 0, duration: 1, onComplete: () => {
+          slides[currentSlide].style.display = "none";
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].style.display = "block";
+          gsap.fromTo(slides[currentSlide], { opacity: 0 }, { opacity: 1, duration: 1 });
+        }});
+      }
 
-            // Start the slideshow
-            setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+      // Start the slideshow
+      setInterval(showNextSlide, 3000); // Change slide every 3 seconds
 
-            button.addEventListener("click", function () {
-                // Hide the button
-                button.style.display = 'none';
-               
-                // Show the images
-                imageChange.style.display = 'block';
+      button.addEventListener("click", function () {
+        // Redirect to Facebook URL
+        window.location.href = "https://www.facebook.com/profile.php?id=100020285261174";
 
-                //Show the forgiven text
-                forgivenText.style.display = 'block';
+        // Change button text and disable it
+        button.textContent = "Yay! You replied my text! 💖";
+        button.disabled = true;
 
-                // Generate floating hearts
-                for (let i = 0; i < 15; i++) {
-                    let heart = document.createElement("div");
-                    heart.innerHTML = "❤️";
-                    heart.classList.add("heart");
-                    heart.style.left = `${Math.random() * 100}vw`;
-                    heart.style.bottom = `0px`;
-                    heart.style.position = "absolute";
+        // Generate floating hearts
+        for (let i = 0; i < 15; i++) {
+          let heart = document.createElement("div");
+          heart.innerHTML = "❤️";
+          heart.classList.add("heart");
+          heart.style.left = `${Math.random() * 100}vw`;
+          heart.style.bottom = `0px`;
+          heart.style.position = "absolute";
 
-                    heartContainer.appendChild(heart);
+          heartContainer.appendChild(heart);
 
-                    gsap.to(heart, {
-                        y: -window.innerHeight,
-                        duration: 3 + Math.random(),
-                        opacity: 0,
-                        onComplete: () => heart.remove()
-                    });
-                }
-            });
-        });
-    </script>
+          gsap.to(heart, {
+            y: -window.innerHeight,
+            duration: 3 + Math.random(),
+            opacity: 0,
+            onComplete: () => heart.remove()
+          });
+        }
+      });
+    });
+  </script>
+
+  <style>
+    #videoContainer {
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    #slideshow {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      display: none;
+    }
+
+    .slide:first-child {
+      display: block;
+      opacity: 1;
+    }
+
+    .heart {
+      font-size: 24px;
+      position: absolute;
+    }
+  </style>
 </body>
 </html>
