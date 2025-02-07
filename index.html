@@ -23,6 +23,12 @@
     <button id="forgiveBtn">Forgive Me? 😢</button>
     <div id="heartContainer"></div>
     <p id="forgivenText" style="display:none;">If you have forgiven, what are you waiting for? <a href="https://www.facebook.com/profile.php?id=100020285261174">Visit Facebook</a></p>
+
+    <div id="imageChange" style="display: none; text-align: center;">
+      <img id="sadImage" src="Sad.png" alt="Sad" style="width: 200px;">
+      <p>Thank you for making me from</p>
+      <img id="happyImage" src="Happy.png" alt="Happy" style="width: 200px;">
+    </div>
   </div>
 
   <script>
@@ -33,6 +39,7 @@
       let slides = document.querySelectorAll(".slide");
       let currentSlide = 0;
       let forgivenText = document.getElementById("forgivenText");
+      let imageChange = document.getElementById("imageChange");
 
       // Shake animation for the button
       gsap.to(button, {
@@ -56,11 +63,12 @@
       setInterval(showNextSlide, 3000); // Change slide every 3 seconds
 
       button.addEventListener("click", function () {
-        // Hide the button
+        // Hide the button and forgiven text
         button.style.display = 'none';
+        forgivenText.style.display = 'none';
 
-        // Show the text with the Facebook link
-        forgivenText.style.display = 'block';
+        // Show the images
+        imageChange.style.display = 'block';
 
         // Generate floating hearts
         for (let i = 0; i < 15; i++) {
