@@ -1,49 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saramsh Khadka - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
     <nav>
-      <h1>My Portfolio</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>I'm a web developer with a passion for design and animation.</p>
-  </section>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="profile.jpg" alt="Saramsh Khadka" class="profile-img">
+            <h1>Saramsh Khadka</h1>
+            <p>QA Engineer | iOS Developer | Python Developer | Data Engineer</p>
+            <a href="#contact" class="cta-btn">Contact Me</a>
+        </div>
+    </section>
 
-  <section id="projects" class="fade-in">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Project One</h3>
-      <p>Description of your amazing project here.</p>
-    </div>
-    <div class="project-card">
-      <h3>Project Two</h3>
-      <p>Another awesome project goes here.</p>
-    </div>
-  </section>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="profile.jpg" alt="Saramsh Khadka" class="about-img">
+            <div>
+                <p>
+                    Hello! I’m Saramsh Khadka, a highly motivated Computer Engineer based in Sanepa, Lalitpur. I have experience in QA Engineering, iOS and Python development, and Data Engineering. My academic background includes an MS in Computer Science from the University of South Dakota and a BE from Kathmandu Engineering College.
+                </p>
+                <ul>
+                    <li><strong>Languages:</strong> C, C++, Swift, Python, HTML, R</li>
+                    <li><strong>Databases:</strong> MySQL, PostgreSQL, SOQL, NoSQL</li>
+                    <li><strong>Tools:</strong> Git, Linux, Jira, SalesForce, Jmeter, PostMan, Robot Framework</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact" class="fade-in">
-    <h2>Contact Me</h2>
-    <p>Email: your.email@example.com</p>
-  </section>
+    <section id="projects" class="section">
+        <h2>Portfolio / Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>RealTime Stock</h3>
+                <p>An app to display real-time stock prices and forex.</p>
+                <span>Python, APIs</span>
+            </div>
+            <div class="project-card">
+                <h3>Student Registration Using Face Recognition</h3>
+                <p>Web application for attendance using facial recognition.</p>
+                <span>Python, OpenCV, Django</span>
+            </div>
+            <div class="project-card">
+                <h3>Clima</h3>
+                <p>iOS application for climate conditions.</p>
+                <span>Swift, iOS</span>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 My Portfolio</p>
-  </footer>
+    <section id="blog" class="section">
+        <h2>Blog / Reflections</h2>
+        <div class="blog-posts">
+            <article class="blog-post">
+                <h3>How QA Engineering Shaped My Approach</h3>
+                <p>During my time at Cedar Gate Technologies, I learned that thorough testing and documentation are as critical as code itself. Rigorous QA ensures robust, reliable software...</p>
+            </article>
+            <article class="blog-post">
+                <h3>My Journey Into iOS Development</h3>
+                <p>At CodeLava, I discovered the power of Swift and the satisfaction of building user-friendly mobile apps. From integrating APIs to designing UI, each step was a new adventure...</p>
+            </article>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="resume" class="section">
+        <h2>Resume / CV</h2>
+        <a href="SaramshCVlatex.pdf" class="cta-btn" download>Download PDF Resume</a>
+        <div class="resume-content">
+            <h3>Education</h3>
+            <ul>
+                <li><strong>MS, Computer Science</strong> - University of South Dakota</li>
+                <li><strong>BE, Computer Science</strong> - Kathmandu Engineering College</li>
+            </ul>
+            <h3>Experience</h3>
+            <ul>
+                <li>Software QA Engineer, Cedar Gate Technologies (2022-2024)</li>
+                <li>QA Officer, Drylce Solutions (2022-2024)</li>
+                <li>Internships: QA, iOS, Python</li>
+            </ul>
+            <h3>Certifications</h3>
+            <ul>
+                <li>Data Science with R, 100 Days of Python, Data Engineering Essentials (SQL, Python, PySpark), iOS & Swift Bootcamp, Tableau Bootcamp</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Your message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="contact-links">
+            <p>Email: saramshkhadka39@gmail.com</p>
+            <p>
+                <a href="https://linkedin.com/in/saramshkhadka" target="_blank">LinkedIn</a> |
+                <a href="https://twitter.com/saramshkhadka" target="_blank">Twitter</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Saramsh Khadka
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
