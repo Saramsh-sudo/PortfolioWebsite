@@ -23,8 +23,11 @@ document.querySelectorAll('.section, .project-card, .blog-post').forEach(el => {
     observer.observe(el);
 });
 
-// Contact form (no backend, just a thank you alert)
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Thank you for reaching out, Saramsh will get back to you soon!');
+    document.querySelector('.contact-form').reset();
+    document.querySelector('.contact-form').insertAdjacentHTML(
+        'afterend',
+        '<p class="success-msg" style="color:green;text-align:center;margin-top:1rem;">Thank you for reaching out, Saramsh will get back to you soon!</p>'
+    );
 });
