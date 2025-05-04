@@ -1,19 +1,30 @@
-// Apply fade-in when section enters viewport
-const faders = document.querySelectorAll('.fade-in');
+// Smooth scroll for navigation
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
-const appearOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -100px 0px"
-};
+// Simple fade-in animation on scroll
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+        }
+    });
+});
+document.querySelectorAll('.section, .project-card, .blog-post').forEach(el => {
+    el.classList.add('pre-fade');
+    observer.observe(el);
+});
 
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('appear');
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
+// Contact form (no backend, just a thank you alert)
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for reaching out, Saramsh will get back to you soon!');
 });
