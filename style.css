@@ -22,6 +22,9 @@ nav {
     z-index: 100;
     top: 0;
 }
+.pre-fade { opacity: 0; transform: translateY(40px); transition: all 1s; }
+.fade-in { opacity: 1 !important; transform: translateY(0) !important; }
+
 
 nav ul {
     display: flex;
