@@ -1,120 +1,68 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I love you Reena, Speak to me 💖</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saramsh Khadka - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>I love you Reena 💕your math teacher for eternity</h1>
-    <p>Speak to me?1000 mistakes ta krishna bhagwan le ni maaf garnu huntheeyo ma bata bhako bhaye ni speak  🥺</p>
-    
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <div id="slideshow">
-      <img src="young.png" alt="Photo 1" class="slide">
-      <img src="middle.png" alt="Photo 2" class="slide">
-      <img src="Reena.jpg" alt="Photo 3" class="slide">
-    </div>
-    <br>
-    
-    <button id="forgiveBtn">Forgive Me? 😢</button>
-    <div id="heartContainer"></div>
-  </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="animate-slide">Saramsh Khadka</h1>
+            <p class="animate-slide">QA Engineer | iOS Developer | Data Enthusiast</p>
+        </div>
+    </section>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let button = document.getElementById("forgiveBtn");
-      let heartContainer = document.getElementById("heartContainer");
-      let slideshow = document.getElementById("slideshow");
-      let slides = document.querySelectorAll(".slide");
-      let currentSlide = 0;
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <div class="education">
+                <h3>Education</h3>
+                <!-- Add education content -->
+            </div>
+            <div class="skills">
+                <h3>Technical Skills</h3>
+                <!-- Add skills content -->
+            </div>
+        </div>
+    </section>
 
-      // Shake animation for the button
-      gsap.to(button, {
-        x: -5,
-        repeat: -1,
-        yoyo: true,
-        duration: 0.1
-      });
+    <section id="experience" class="section">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
+            <!-- Add experience timeline -->
+        </div>
+    </section>
 
-      // Slideshow animation
-      function showNextSlide() {
-        gsap.to(slides[currentSlide], { opacity: 0, duration: 1, onComplete: () => {
-          slides[currentSlide].style.display = "none";
-          currentSlide = (currentSlide + 1) % slides.length;
-          slides[currentSlide].style.display = "block";
-          gsap.fromTo(slides[currentSlide], { opacity: 0 }, { opacity: 1, duration: 1 });
-        }});
-      }
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <!-- Add project cards -->
+        </div>
+    </section>
 
-      // Start the slideshow
-      setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-      button.addEventListener("click", function () {
-        // Redirect to Facebook URL
-        window.location.href = "https://www.facebook.com/profile.php?id=100020285261174";
-
-        // Change button text and disable it
-        button.textContent = "Yay! You replied my text! 💖";
-        button.disabled = true;
-
-        // Generate floating hearts
-        for (let i = 0; i < 15; i++) {
-          let heart = document.createElement("div");
-          heart.innerHTML = "❤️";
-          heart.classList.add("heart");
-          heart.style.left = `${Math.random() * 100}vw`;
-          heart.style.bottom = `0px`;
-          heart.style.position = "absolute";
-
-          heartContainer.appendChild(heart);
-
-          gsap.to(heart, {
-            y: -window.innerHeight,
-            duration: 3 + Math.random(),
-            opacity: 0,
-            onComplete: () => heart.remove()
-          });
-        }
-      });
-    });
-  </script>
-
-  <style>
-    #videoContainer {
-      text-align: center;
-      margin: 20px auto;
-    }
-
-    #slideshow {
-      position: relative;
-      width: 300px;
-      height: 200px;
-      margin: 0 auto;
-    }
-
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      display: none;
-    }
-
-    .slide:first-child {
-      display: block;
-      opacity: 1;
-    }
-
-    .heart {
-      font-size: 24px;
-      position: absolute;
-    }
-  </style>
+    <script src="script.js"></script>
 </body>
 </html>
